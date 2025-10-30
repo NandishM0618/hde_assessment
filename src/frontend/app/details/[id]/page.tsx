@@ -160,7 +160,12 @@ export default function Details() {
                             : "bg-yellow-500 hover:bg-yellow-600 text-black"
                         }`}
                 >
-                    <Link href={`/checkout/${id}`}>Confirm</Link>
+                    <Link
+                        href={`/checkout/${id}?exp=${exp.title}&date=${selectedDate}&time=${selectedTime}&qty=${qty}&subtotal=${exp.price * qty}`}
+                    >
+                        Confirm
+                    </Link>
+
                 </button>
             </div>
         </div>

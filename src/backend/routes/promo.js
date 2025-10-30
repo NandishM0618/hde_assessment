@@ -13,7 +13,7 @@ router.post("/validate", (req, res) => {
             return res.status(400).json({ valid: false, message: "Invalid code" });
         }
 
-        res.status(200).json({ vaild: true, ...promos[code] })
+        res.status(200).json({ valid: true, ...promos[code] })
     } catch (error) {
         console.log(error)
     }

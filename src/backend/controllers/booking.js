@@ -3,7 +3,7 @@ const Experience = require('../models/experience')
 
 async function createBooking(req, res) {
     try {
-        const { experienceId, customerName, customerEmail, date, time, price, promoCode } = req.body;
+        const { experienceId, customerName, customerEmail, date, time, qty, subtotal, tax, price, promoCode } = req.body;
 
         const exp = await Experience.findOne({
             _id: experienceId,
@@ -15,7 +15,7 @@ async function createBooking(req, res) {
         }
 
         const booking = await Booking.create({
-            experienceId, customerName, customerEmail, date, time, price, promoCode
+            experienceId, customerName, customerEmail, date, time, qty, subtotal, tax, price, promoCode
         });
 
         await Experience.updateOne(
