@@ -144,6 +144,26 @@ App runs at:
 
 ---
 
+## Snapshots
+
+- Home Page
+  
+<img width="1904" height="944" alt="Screenshot 2025-10-30 200232" src="https://github.com/user-attachments/assets/036d256f-851d-4088-bc4d-fd400ba001a6" />
+
+- Details Page
+
+<img width="1907" height="947" alt="Screenshot 2025-10-30 200352" src="https://github.com/user-attachments/assets/fda847a8-37cc-4059-a1d1-7578020d2668" />
+
+- Checkout Page
+
+<img width="1919" height="944" alt="Screenshot 2025-10-30 200436" src="https://github.com/user-attachments/assets/9c442cfa-7e03-495b-bdec-4f53bac81092" />
+
+- Confirm Page
+
+<img width="1793" height="588" alt="Screenshot 2025-10-30 200214" src="https://github.com/user-attachments/assets/bd1ad06f-2cbc-4cde-8b88-2adb0a194bf5" />
+
+---
+
 ## ✅ Validation
 
 | Field       | Rule                   |
