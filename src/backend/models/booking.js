@@ -9,6 +9,7 @@ const bookingSchema = new mongoose.Schema({
     date: String,
     time: String,
     price: Number,
+    promoCode: String,
     status: { type: String, default: "confirmed" }
 }, { timestamps: true })
 
