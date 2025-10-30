@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export default class apiClient {
     constructor() {
-        this.apiUrl = 'http://localhost:8080';
+        this.apiUrl = process.env.NEXT_PUBLIC_API_URL;
         this.client = axios.create({
             baseURL: this.apiUrl,
             headers: { 'Content-Type': 'application/json' }
