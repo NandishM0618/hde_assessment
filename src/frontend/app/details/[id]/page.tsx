@@ -162,7 +162,7 @@ export default function Details() {
                         }`}
                 >
                     <Link
-                        href={`/checkout?id=${id}?exp=${exp.title}&date=${selectedDate}&time=${selectedTime}&qty=${qty}&subtotal=${exp.price * qty}`}
+                        href={`/checkout?id=${id}&exp=${exp.title}&date=${selectedDate}&time=${selectedTime}&qty=${qty}&subtotal=${exp.price * qty}`}
                     >
                         Confirm
                     </Link>
