@@ -31,7 +31,6 @@ export default function Header({ searchTerm, setSearchTerm }: HeaderProps) {
 
                 <button
                     className="px-4 py-2 cursor-pointer bg-yellow-500 text-white rounded-md font-medium hover:opacity-90"
-
                 >
                     Search
                 </button>
