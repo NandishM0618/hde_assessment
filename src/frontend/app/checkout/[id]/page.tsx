@@ -52,8 +52,7 @@ export default function Checkout({ params }: { params: Promise<{ id: string }> }
             });
 
             console.log(res)
-            if (res.success) {
-                alert("Booking Successful ✅");
+            if (res.message === "Booking successful") {
                 router.push(`/success?booking=${res.booking._id}`);
             }
 
