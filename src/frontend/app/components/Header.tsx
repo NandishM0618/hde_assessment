@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import logo from '../../public/assets/logo.png'
 import Image from "next/image";
+import { Search } from 'lucide-react';
 
 interface HeaderProps {
     searchTerm: string;
@@ -7,34 +9,61 @@ interface HeaderProps {
 }
 
 export default function Header({ searchTerm, setSearchTerm }: HeaderProps) {
+    const [showMobileSearch, setShowMobileSearch] = useState<Boolean>(false);
+
+
     return (
-        <nav className="rounded-xl bg-white shadow p-4 flex items-center justify-between max-w-7xl mx-auto">
+        <>
+            <nav className="rounded-xl bg-white shadow p-4 flex items-center justify-between max-w-7xl mx-auto">
 
-            <div className="flex items-center space-x-3">
-                <Image
-                    src={logo}
-                    alt="logo"
-                    width={100}
-                    height={100}
-                    className="object-contain cursor-pointer"
-                />
-            </div>
+                {/* Logo */}
+                <div className="flex items-center space-x-3">
+                    <Image
+                        src={logo}
+                        alt="logo"
+                        width={100}
+                        height={100}
+                        className="object-contain cursor-pointer"
+                    />
+                </div>
 
-            <div className="hidden md:flex items-center space-x-2 w-1/2">
-                <input
-                    type="text"
-                    placeholder="Search experiences..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="border w-full border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-black"
-                />
+                {/* Desktop Search */}
+                <div className="hidden md:flex items-center space-x-2 w-1/2">
+                    <input
+                        type="text"
+                        placeholder="Search experiences..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className="border w-full border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-black"
+                    />
+                    <button className="px-4 py-2 cursor-pointer bg-yellow-500 text-white rounded-md font-medium hover:opacity-90">
+                        Search
+                    </button>
+                </div>
 
+                {/* Mobile Search Icon */}
                 <button
-                    className="px-4 py-2 cursor-pointer bg-yellow-500 text-white rounded-md font-medium hover:opacity-90"
+                    className="md:hidden p-2 cursor-pointer"
+                    onClick={() => setShowMobileSearch(!showMobileSearch)}
                 >
-                    Search
+                    <Search />
                 </button>
-            </div>
-        </nav>
+            </nav>
+
+            {showMobileSearch && (
+                <div className="px-4 mt-2 md:hidden flex items-center gap-2">
+                    <input
+                        type="text"
+                        placeholder="Search experiences..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className="border w-full border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-black"
+                    />
+                    <button className="px-3 py-2 cursor-pointer bg-yellow-500 text-white rounded-md font-medium hover:opacity-90">
+                        Go
+                    </button>
+                </div>
+            )}
+        </>
     );
 }
