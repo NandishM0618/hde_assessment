@@ -56,17 +56,17 @@ export default function Details() {
                 <div>
                     <h2 className="font-semibold text-lg mb-2">Choose Date</h2>
                     <div className="flex flex-wrap gap-2">
-                        {Array.from(new Set((exp.slots || []).map((s: any) => s.date))).map(date => {
-                            const formattedDate = new Date(date).toLocaleDateString("en-US", {
+                        {Array.from(new Set((exp.slots || []).map((s: any) => s.date))).map((date) => {
+                            const formattedDate = new Date(date as string).toLocaleDateString("en-US", {
                                 month: "short",
                                 day: "numeric",
                             });
+
                             return (
                                 <button
-                                    key={date}
-                                    onClick={() => setSelectedDate(date)}
-                                    className={`px-3 py-2 cursor-pointer rounded-md border text-sm
-                  ${selectedDate === date
+                                    key={date as string}
+                                    onClick={() => setSelectedDate(date as string)}
+                                    className={`px-3 py-2 rounded-md border text-sm transition-all ${selectedDate === date
                                             ? "bg-yellow-500 border-yellow-600 text-black font-medium"
                                             : "bg-gray-100 hover:bg-gray-200 text-gray-700"
                                         }`}
@@ -75,6 +75,7 @@ export default function Details() {
                                 </button>
                             );
                         })}
+
                     </div>
                 </div>
 
