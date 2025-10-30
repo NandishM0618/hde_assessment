@@ -67,8 +67,8 @@ export default function Details() {
                                     key={date as string}
                                     onClick={() => setSelectedDate(date as string)}
                                     className={`px-3 py-2 rounded-md border text-sm transition-all ${selectedDate === date
-                                            ? "bg-yellow-500 border-yellow-600 text-black font-medium"
-                                            : "bg-gray-100 hover:bg-gray-200 text-gray-700"
+                                        ? "bg-yellow-500 border-yellow-600 text-black font-medium"
+                                        : "bg-gray-100 hover:bg-gray-200 text-gray-700"
                                         }`}
                                 >
                                     {formattedDate}
@@ -162,7 +162,7 @@ export default function Details() {
                         }`}
                 >
                     <Link
-                        href={`/checkout/${id}?exp=${exp.title}&date=${selectedDate}&time=${selectedTime}&qty=${qty}&subtotal=${exp.price * qty}`}
+                        href={`/checkout?id=${id}?exp=${exp.title}&date=${selectedDate}&time=${selectedTime}&qty=${qty}&subtotal=${exp.price * qty}`}
                     >
                         Confirm
                     </Link>

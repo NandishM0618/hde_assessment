@@ -3,11 +3,9 @@
 import apiClient from "@/services/apiService";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
-import React, { useState } from "react";
+import { useState } from "react";
 
-export default function Checkout({ params }: { params: Promise<{ id: string }> }) {
-    const { id } = React.use(params);
-
+export default function CheckoutPageClient() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [promo, setPromo] = useState("");
@@ -17,6 +15,7 @@ export default function Checkout({ params }: { params: Promise<{ id: string }> }
     const searchParams = useSearchParams();
     const router = useRouter()
 
+    const id = searchParams.get("id")
     const title = searchParams.get("exp")
     const date = searchParams.get("date");
     const time = searchParams.get("time");
