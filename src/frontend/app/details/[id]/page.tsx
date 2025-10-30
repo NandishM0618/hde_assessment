@@ -16,7 +16,6 @@ export default function Details() {
     async function getExperience() {
         try {
             const res = await api.get(`experiences/${id}`);
-            console.log(res)
             setExp(res.data);
         } catch (error) {
             console.log(error);
@@ -27,7 +26,10 @@ export default function Details() {
         if (id) getExperience();
     }, [id]);
 
-    if (!exp) return <p className="text-center py-20 text-lg font-medium">Loading...</p>;
+    if (!exp) return (<div className="flex flex-col items-center gap-3">
+        <div className="w-10 h-10 border-4 border-yellow-500 border-t-transparent rounded-full animate-spin"></div>
+        <p className="text-gray-600 text-sm">Loading details...</p>
+    </div>)
 
     return (
         <div className="max-w-6xl mx-auto p-5 mt-4 grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -49,8 +49,6 @@ export default function CheckoutPageClient() {
                 promoCode: promo,
                 price: finalAmount
             });
-
-            console.log(res)
             if (res.message === "Booking successful") {
                 router.push(`/success?booking=${res.booking._id}`);
             }
@@ -63,8 +61,6 @@ export default function CheckoutPageClient() {
     async function validatePromo() {
         try {
             const res = await api.post("promo/validate", { code: promo });
-
-            console.log(res)
             if (res.valid) {
                 setDiscount({
                     type: res.type,
